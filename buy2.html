@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gutumiza Imodoka - STATIC PAGE</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #686ace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .note {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .payment-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .payment-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 15px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: #f9f9f9;
+            width: 100px;
+            text-align: center;
+        }
+
+        .payment-option:hover {
+            border-color: #007bff;
+            background-color: #e6f0ff;
+        }
+
+        .payment-option input[type="radio"] {
+            display: none;
+        }
+
+        .payment-option img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 5px;
+            border-radius: 3px;
+        }
+
+        .payment-option input[type="radio"]:checked ~ img {
+            border: 2px solid #28a745; 
+            border-radius: 5px;
+        }
+
+        .payment-option input[type="radio"]:checked ~ span {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        /* Twahinduye buto ngo itohereze amakuru (yaba ifite type="button") */
+        .buy-now-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #0026ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .buy-now-btn:hover {
+            background-color: #0059ff;
+        }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <h1>🚗 Gutumiza Imodoka</h1>
+
+        
+        <form id="orderForm"> 
+            
+            <section class="user-info">
+                <h2>Amakuru y'Ugura</h2>
+                
+                <div class="form-group">
+                    <label for="name">Amazina Yuzuye:</label>
+                    <input type="text" id="name" name="Amazina" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="Email_Ugura" required> 
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Nimero ya Telefone:</label>
+                    <input type="tel" id="phone" name="Telefone" placeholder="+25078xxxxxxx" required>
+                </div>
+                
+                <div class="form-group price-group">
+                    <label for="car_price">Igiciro cy'Imodoka:</label>
+                    <input type="text" id="car_price_display" value="25,000,000 RWF" readonly> 
+                    <input type="hidden" name="Igiciro_Cyemejwe" value="25,000,000 RWF">
+                </div>
+            </section>
+
+            <section class="payment-method">
+                <h2>Uburyo bwo Kwishyura</h2>
+                <div class="payment-options">
+                    
+                    <label class="payment-option" data-value="MTN MoMo">
+                        <input type="radio" name="Uburyo_bwo_Kwishyura" value="MTN MoMo" required>
+                        <img src="image/MTN.png" alt="MTN MoMo Logo">
+                        <span>MTN MoMo</span>
+                    </label>
+
+                    <label class="payment-option" data-value="Airtel Money">
+                        <input type="radio" name="Uburyo_bwo_Kwishyura" value="Airtel Money">
+                        <img src="image/AIRTEL.png" alt="Airtel Money Logo">
+                        <span>Airtel Money</span>
+                    </label>
+
+                    <label class="payment-option" data-value="PayPal">
+                        <input type="radio" name="Uburyo_bwo_Kwishyura" value="PayPal">
+                        <img src="image/paypal.png" alt="PayPal Logo">
+                        <span>PayPal</span>
+                    </label>
+
+                    <label class="payment-option" data-value="MasterCard">
+                        <input type="radio" name="Uburyo_bwo_Kwishyura" value="MasterCard">
+                        <img src="image/mastercard.png" alt="MasterCard Logo">
+                        <span>MasterCard</span>
+                    </label>
+                    
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="confirm_price" name="Kwemeza_Igiciro" value="Yego" required>
+                    <label for="confirm_price">Nemeje Igiciro: **25,000,000 RWF**</label>
+                </div>
+            </section>
+            
+            <button type="button" id="submitBtn" class="buy-now-btn" onclick="alert('IT IS ABOUT SHIPPING')">Buy Now (Gura Nonaha)</button>
+            
+            </form>
+    </div>
+</body>
+</html>

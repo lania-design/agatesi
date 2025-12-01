@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urubuga rw'Ubufasha - RWANDA CARS LTD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #007BFF; 
+            --secondary-color: #f4f4f9;
+            --dark-color: #343a40;
+            --light-color: #ffffff;
+            --accent-color: #FFC107; 
+            --call-button-color: #28a745; 
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 15px 0;
+            text-align: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.8em;
+            letter-spacing: 1px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        header p {
+            font-size: 1.1em;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr; 
+            gap: 30px;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        section {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px; 
+        }
+
+        /* Icyiciro cyo Kumenya Aho Igicuruzwa Giherereye */
+        #tracking-section {
+            grid-column: 1 / -1; 
+            background-color: var(--light-color);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        #tracking-container {
+            border-radius: 6px;
+            overflow: hidden;
+            height: 400px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #tracking-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary-color);
+            font-size: 1.7em;
+        }
+
+        /* Call Button Styling */
+        #quick-call-button {
+            margin-top: 20px;
+            padding: 15px 25px;
+            background-color: var(--call-button-color);
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        #quick-call-button:hover {
+            background-color: #218838;
+        }
+
+        /* Ibindi bi code bya CSS birakomeza... */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
+        .form-group input[type="text"], .form-group input[type="email"], .form-group select, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; transition: border-color 0.3s;
+        }
+        .form-group textarea { resize: vertical; }
+
+        button[type="submit"] {
+            background-color: var(--primary-color); color: white; padding: 15px 25px; border: none; border-radius: 6px; cursor: pointer;
+            font-size: 1.1em; font-weight: bold; transition: background-color 0.3s ease; width: 100%; margin-top: 10px;
+        }
+        button[type="submit"]:hover { background-color: #0056b3; }
+
+        .contact-item { display: flex; align-items: center; margin-bottom: 20px; }
+        .contact-item i { font-size: 1.5em; color: var(--primary-color); margin-right: 15px; width: 30px; text-align: center; }
+        .contact-item strong { display: block; }
+        .contact-item span { font-size: 0.9em; color: #6c757d; }
+
+        footer { background-color: var(--dark-color); color: #adb5bd; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.9em; }
+        #responseMessage { font-weight: bold; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1><i class="fas fa-car"></i> BUY CAR WITH US - Urubuga rw'Ubufasha</h1>
+    </div>
+
+    <header>
+        <h2>Twiteguye Kugufasha mu Ibibazo byose by'Imodoka</h2>
+        <p>Ese imodoka yaguze irimo **gutinda**, cyangwa ufite ikindi kibazo kijyanye na serivisi? Oherereza ubutumwa bwizewe.</p>
+    </header>
+
+    <main>
+        <section id="tracking-section">
+            <h2><i class="fas fa-ship"></i> Aho Igicuruzwa Cyageze (Tracking Status)</h2>
+            <p>Iyi karita yerekana ahantu abakozi bacu b'ubutumwa n'imodoka ziri gukorera (Shipping Location) mu rwego rwo gucunga ibicuruzwa byikorewe mu bwato/indege.</p>
+            
+            <div id="tracking-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Atlantic+Ocean&t=&z=5&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <p style="margin-top: 15px; font-size: 0.9em;">**ICYITONDERWA:** Iyi karita yerekana uko **shipping** igenda mu buryo bwa jenerali. Mu gukoresha Tracking, menya neza ko ufite nimero y'ikibazo (Ticket Number) yatanzwe mu gihe cyo kugura.</p>
+        </section>
+
+        <div class="content-grid">
+            <section id="inquiry-form">
+                <h2><i class="far fa-envelope"></i> Formulaire yo Gusaba Ubufasha</h2>
+                
+                <p style="color: red; font-weight: bold;">
+                    <i class="fas fa-info-circle"></i> **INAMA:** Nyuma yo gukanda "Ohereza Ubutumwa", Porogaramu ya Email yawe izahita yifungura. Uzasabwa gukanda **SEND** (Ohereza) bwa kabiri.
+                </p>
+
+                <form id="helpForm">
+                    <div class="form-group">
+                        <label for="fullName">Amazina Yuzuye (Nk'uko yanditse ku byangombwa):</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email yawe (Iyakoreshwa cyane):</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Icyiciro cy'Ikibazo (Hitamo):</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Hitamo Icyiciro --</option>
+                            <option value="Ikibazo Cya Tekiniki (Imodoka Iri Gutita/Moteri)">🚨 Ikibazo Cya Tekiniki (Imodoka Iri Gutita/Moteri)</option>
+                            <option value="Ibibazo bya Garanti (Warranty Claims)">📋 Ibibazo bya Garanti (Warranty Claims)</option>
+                            <option value="Gusaba Serivisi Ikorwa (Maintenance)">🛠️ Gusaba Serivisi Ikorwa (Maintenance)</option>
+                            <option value="Ibindi Bibazo (General Inquiry)">❓ Ibindi Bibazo (General Inquiry)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Sobanura Ikibazo Neza (Mu magambo adashidikanywaho, shingira kuri ibyo ubona):</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Oherereza Ubutumwa</button>
+                </form>
+
+                <p id="responseMessage" style="text-align: center; margin-top: 15px;"></p>
+            </section>
+
+            <section id="contact-info">
+                <h2><i class="fas fa-headset"></i> Amakuru y'Ubufasha Bwihuse</h2>
+                
+                <a href="tel:+250788123456" id="quick-call-button">
+                    <i class="fas fa-phone-volume"></i> Hamagara Ubu!
+                </a>
+                
+                <div style="margin: 20px 0; border-top: 1px solid #ddd; padding-top: 15px;">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Telefone y'Ubufasha:</strong>
+                            <span>+250 793 215 197</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Aho Duherereye:</strong>
+                            <span>Kigali City Tower</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Igihe Dukorera:</strong>
+                            <span>Kuva 8:00 AM - 5:00 PM (Kuwa Mbere-Kuwa Gatanu)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr style="margin: 25px 0;">
+                
+                <h3>Kumenya ibijyanye na Garanti</h3>
+                <p style="font-size: 0.9em; color: #6c757d;">
+                    Ibibazo byose bya tekiniki biracyemerwa, ubu formulaire iroroshye kuburyo uhita utanga ubutumwa bwihuse.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 BUY CAR WHITH US. Uburenganzira bwose burabitswe. | Compliance: ISO 9001.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('helpForm');
+            const responseMessage = document.getElementById('responseMessage');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+
+                // Dukura amakuru muri form
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                // const carDetails = document.getElementById('carDetails').value; <-- Ibi byakuweho
+                const message = document.getElementById('message').value;
+
+                // Icyitonderwa: Iyi email igomba kuba iyawe
+                const recipientEmail = 'support@rwandacarsltd.com'; 
+                
+                // Dutegura Ubutumwa bw'email
+                let emailBody = `
+Mwaramutse,Mwiriwe
+
+Dore Ikibazo cyangwa Ubufasha bwasabuwe:
+
+----------------------------------------------
+AMAKURU Y'UBUGENZI:
+Amazina Yuzuye: ${fullName}
+Email: ${email}
+
+ICYICIRO:
+Icyiciro cy'Ikibazo: ${subject}
+Amakuru y'Imodoka: Nta makuru yatanzwe (Formulaire yakozwe mu buryo bworoshye)
+
+UBUTUMWA:
+${message}
+----------------------------------------------
+`;
+                // Turateganya 'mailto' link
+                const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent('Ubufasha: ' + subject + ' - ' + fullName)}&body=${encodeURIComponent(emailBody)}`;
+
+                // Dufungura porogaramu ya email ya client
+                window.location.href = mailtoLink;
+
+                // Dutuza umenya ko ikikoze
+                responseMessage.style.color = '#007BFF'; 
+                responseMessage.innerHTML = '✅ Ubutumwa bwawe bwatunganyijwe! **Porogaramu ya Email yawe yafunguwe**. Kanda **Ohereza** muri iyo porogaramu.';
+                
+                setTimeout(() => {
+                     responseMessage.innerHTML = '';
+                }, 10000);
+            });
+        });
+    </script> 
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Our Team</title>
+    
+    <style>
+        /* General Styling and Background */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Soft Blue Background */
+            background-color: #ffffff; 
+            color: #030303;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #0f065c; /* Nahinduye ibara rya container kugira ngo imbere hahinduke umweru muto kugira ngo birushye kuboneka neza */
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(17, 0, 255, 0.48); /* Nahinduye ibara rya box-shadow kugira ngo birushye kuboneka neza */
+        }
+
+        /* Heading Styling */
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2400f1; /* Deep Blue */
+            margin-bottom: 30px;
+            position: relative; /* Tugiye kuyishyira mu murongo wo hejuru */
+        }
+
+        header h1 {
+            color: #007bff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        /* HOME Button Styling */
+        .home-button {
+            position: absolute; /* Iyi ni iyo kugira ngo igume hejuru */
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: #007bff; /* Blue Background */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Mission/Description Section */
+        .mission {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f0f8ff; /* Lightest blue for contrast */
+            border-radius: 8px;
+            border-left: 5px solid #007bff;
+        }
+
+        .mission p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Team Section Layout */
+        .team-section h2 {
+            text-align: center;
+            color: whitesmoke;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        /* Individual Team Member Card */
+        .team-member {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            width: 300px; /* Width of the card */
+            transition: transform 0.3s ease-in-out;
+            border: 1px solid #ddd;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px); /* Animation when hovering */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Photo Styling */
+        .team-member img {
+            width: 150px; /* Size of the photo */
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes the photo round */
+            border: 4px solid #007bff; /* Blue border around photo */
+            margin-bottom: 15px;
+        }
+
+        /* Text Details */
+        .team-member h3 {
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(0, 26, 255, 0.61);
+            color: white;
+            border-radius: 0 0 12px 12px;
+        }
+        .team{
+            color: white;
+
+        }
+        .meet{
+            color:whitesmoke;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <a href="index.html" class="home-button">🏠 HOME</a>
+            
+            <h1>Who We Are</h1>
+            <p class="team">The Team That Built This Website</p>
+        </header>
+
+        <div class="mission">
+            <h2>Our Vision</h2>
+            <p>We are committed to delivering modern, reliable, and user-friendly technology services that solve everyday problems. Our website was built by experts driven by knowledge and passion.</p>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet Our Team</h2>
+            
+            <div class="team-grid">
+                
+                <div class="team-member">
+                    <img src="image/beda.jpg" alt="Photo of beda">
+                    <h3><strong>NONANTE NEUF</strong></h3>
+                    <p><strong>Chief Coordinator (CEO)</strong></p>
+                    <p>He studied Software Engineering and leads the entire Development department.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="image/kelia.jpg" alt="Photo of KELLIA">
+                    <h3>UWASE KELLIA</h3>
+                    <p><strong>Lead Designer (UI/UX)</strong></p>
+                    <p>She is responsible for creating the website's structure and ensuring a beautiful, user-friendly interface.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="image/CHRISTIAN.jpg" alt="Photo of christian">
+                    <h3>NDAYISHIMIYE CHRISTIAN</h3>
+                    <p><strong>Content Manager</strong></p>
+                    <p>He writes all the textual content on our website and ensures the quality of published information.</p>
+                </div>
+                <div class="team-member">
+                    <img src="image/christe.jpg" alt="Photo of chrstella">
+                    <h3>ingabire chrstella</h3>
+                    <p><strong>Content Manager</strong></p>
+                    <p>She writes all the textual content on our website and ensures the quality of published information.</p>
+                </div>
+
+                </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2025 The Team. All rights reserved.
+    </footer>
+
+</body>
+</html>

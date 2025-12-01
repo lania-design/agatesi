@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scientific Calculator</title>
+
+<style>
+    body {
+        background:#ffffff;
+        font-family:Arial;
+        display:flex;
+        justify-content:center;
+        padding-top:40px;
+        color:white;
+    }
+
+    .calculator {
+        background:#1010a6;
+        padding:20px;
+        width:360px;
+        border-radius:10px;
+        box-shadow:0 0 15px black;
+    }
+
+    #display {
+        width:100%;
+        height:70px;
+        font-size:30px;
+        margin-bottom:15px;
+        text-align:right;
+        padding-right:10px;
+        border:none;
+        outline:none;
+        border-radius:8px;
+        background:#eee;
+        color:black;
+    }
+
+    .row {
+        display:flex;
+        justify-content:center;
+        flex-wrap:nowrap;
+        margin-bottom:6px;
+        
+    }
+
+    .btn {
+        flex:1;
+        margin:3px;
+        height:50px;
+        font-size:17px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        background:#333;
+        color:white;
+    }
+
+    .btn:hover {
+        background:#555;
+    }
+
+    .operator{
+        background:#ff9500;
+    }
+
+    .operator:hover{
+        background:#e08500;
+    }
+
+    .equal {
+        background:#28a745;
+    }
+    /* HOME Button Styling nshya */
+        .home-button {
+            position: absolute; 
+            top: 20px; 
+            left: 20px;
+            padding: 8px 12px;
+            background-color: #f8f9fa; /* Light background */
+            color: #007bff; /* Blue text */
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #007bff;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        /* HOME Button Styling nshya */
+        .back-button {
+            position: absolute; 
+            top: 20px; 
+            right: 20px;
+            padding: 8px 12px;
+            background-color: #f8f9fa; /* Light background */
+            color: #007bff; /* Blue text */
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #007bff;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+     <a href="index.html" class="home-button">🏠 HOME</a> 
+      <a href="SIMPLE.html" class="back-button">BACK </a> 
+
+    <input type="text" id="display" disabled>
+
+    <!-- ALL OPERATORS ON ONE LINE -->
+    <div class="row">
+        <button class="btn operator" onclick="addToDisplay('+')">+</button>
+        <button class="btn operator" onclick="addToDisplay('-')">−</button>
+        <button class="btn operator" onclick="addToDisplay('*')">×</button>
+        <button class="btn operator" onclick="addToDisplay('/')">÷</button>
+        <button class="btn operator" onclick="scientific('sqrt')">√</button>
+        <button class="btn operator" onclick="addToDisplay('**')">xʸ</button>
+        <button class="btn operator" onclick="scientific('log')">log</button>
+        <button class="btn operator" onclick="scientific('sin')">sin</button>
+        <button class="btn operator" onclick="scientific('cos')">cos</button>
+        <button class="btn operator" onclick="scientific('tan')">tan</button>
+    </div>
+
+    <!-- NUMBERS -->
+    <div class="row">
+        <button class="btn" onclick="addToDisplay('7')">7</button>
+        <button class="btn" onclick="addToDisplay('8')">8</button>
+        <button class="btn" onclick="addToDisplay('9')">9</button>
+    </div>
+
+    <div class="row">
+        <button class="btn" onclick="addToDisplay('4')">4</button>
+        <button class="btn" onclick="addToDisplay('5')">5</button>
+        <button class="btn" onclick="addToDisplay('6')">6</button>
+    </div>
+
+    <div class="row">
+        <button class="btn" onclick="addToDisplay('1')">1</button>
+        <button class="btn" onclick="addToDisplay('2')">2</button>
+        <button class="btn" onclick="addToDisplay('3')">3</button>
+    </div>
+
+    <div class="row">
+        <button class="btn" onclick="addToDisplay('0')">0</button>
+        <button class="btn" onclick="addToDisplay('.')">.</button>
+        <button class="btn equal" onclick="calculate()">=</button>
+    </div>
+
+    <!-- CLEAR BUTTONS -->
+    <div class="row">
+        <button class="btn" onclick="clearDisplay()">C</button>
+        <button class="btn" onclick="delChar()">DEL</button>
+        <button class="btn" onclick="scientific('pi')">π</button>
+      <!--<button class="btn" onclick="scientific('e')">e</button>-->
+    </div>
+
+</div>
+
+<script>
+function addToDisplay(value){
+    document.getElementById("display").value += value;
+}
+
+function clearDisplay(){
+    document.getElementById("display").value = "";
+}
+
+function delChar(){
+    let d = document.getElementById("display");
+    d.value = d.value.slice(0, -1);
+}
+
+function calculate(){
+    try {
+        let result = eval(document.getElementById("display").value);
+        document.getElementById("display").value = result;
+    } catch {
+        alert("Invalid Expression!");
+    }
+}
+
+function scientific(func){
+    let d = document.getElementById("display");
+    let x = parseFloat(d.value);
+
+    switch(func){
+        case "sin": d.value = Math.sin(x * Math.PI/180); break;
+        case "cos": d.value = Math.cos(x * Math.PI/180); break;
+        case "tan": d.value = Math.tan(x * Math.PI/180); break;
+        case "sqrt": d.value = Math.sqrt(x); break;
+        case "log": d.value = Math.log10(x); break;
+        case "pi": d.value += Math.PI; break;
+        case "e": d.value += Math.E; break;
+    }
+}
+</script>
+
+</body>
+</html>

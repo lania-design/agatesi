@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sale: LAMBONGHIN 2025 - Premium Listing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS FOR THE NEW UI (MINIMALIST & MODERN) */
+        :root {
+            --accent-color: #007BFF; /* The primary action blue */
+            --dark-color: #3695cc; /* Main heading and background color */
+            --light-bg: #F9FAFB;
+            --white: rgb(248, 244, 244);
+            --text-color: #374151; /* Standard body text color */
+            --border-color: #E5E7EB;
+        }
+
+        body {
+           /* font-family: 'Inter', sans-serif; /* Modern, clean font family 
+            margin: 0;
+            padding: 0;
+            background-image: url(image/backk.jpg);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding-bottom: 70px;*/
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background-image:url(image/background.jpg);
+            background-size: cover;
+            background-position: center;
+      
+
+        }
+
+        /* PAGE STRUCTURE */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--white);
+            min-height: 100vh; /* Ensures a full-height page look */
+        }
+        
+        .section {
+            padding: 40px 60px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-color);
+            margin-top: 0;
+        }
+
+        /* 1. HEADER (TITLE & IMAGE) */
+        .product-hero {
+            position: relative;
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 80px 60px 40px 60px;
+        }
+        
+        .product-hero h1 {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+        
+        .product-hero .subtitle {
+            font-size: 1.2em;
+            color: #D1D5DB;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .main-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+        }
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 2. PRICE & MAIN SPECS */
+        .price-specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* Price: 1/3, Specs: 2/3 */
+            gap: 60px;
+        }
+        
+        .price-box {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .price-tag {
+            font-size: 3.5em;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin: 0 0 15px 0;
+            line-height: 1;
+        }
+        
+        /* SPECIFICATIONS LIST */
+        .specs-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .specs-list li {
+            font-size: 1.1em;
+            border-left: 3px solid var(--accent-color);
+            padding: 15px;
+            background-color: var(--white);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
+        }
+        .specs-list li strong {
+            display: block;
+            font-size: 0.9em;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+
+        /* STICKY CTA BAR (BUY BUTTON) */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 10px 20px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Hides by default, use JS to show after scrolling */
+            /* transform: translateY(100%); transition: transform 0.3s ease-in-out; */
+        }
+        
+        .sticky-price {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .call-to-action-sticky {
+            padding: 12px 25px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .call-to-action-sticky:hover {
+            background-color: #0056b3;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .section {
+                padding: 30px 20px;
+            }
+            .product-hero {
+                 padding: 50px 20px 30px 20px;
+            }
+             .product-hero h1 {
+                font-size: 2.2em;
+            }
+            .price-specs-grid {
+                grid-template-columns: 1fr; /* Stacked on mobile */
+                gap: 30px;
+            }
+            .specs-list {
+                grid-template-columns: 1fr;
+            }
+            .sticky-cta {
+                flex-direction: column;
+                padding: 15px 20px;
+                text-align: center;
+            }
+            .sticky-price {
+                margin-bottom: 10px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <div class="product-hero">
+            <h1>LAMOGHIN</h1>
+            <p class="subtitle">Premium Performance. Exclusive Offer.</p>
+            
+            <div class="main-image">
+                <img src="image/lambo 3.jpg" alt="LAMBOGINI">
+            </div>
+        </div>
+        
+        <div class="section price-specs-grid">
+            
+            <div class="price-box">
+                <p style="font-size: 0.9em; margin-bottom: 5px; color: var(--text-color);">Best Price</p>
+                <div class="price-tag">
+                    $45,000
+                </div>
+                <p style="font-size: 0.9em; color: var(--text-color);">*Status:* In Stock. Ready for immediate pickup.</p>
+            </div>
+
+            <div class="specs-details">
+                <h2><i class="fas fa-tachometer-alt" style="color: var(--accent-color);"></i> Key Specifications</h2>
+                <ul class="specs-list">
+                    <li><strong>Brand</strong> LAMOGHINI</li>
+                    <li><strong>Model</strong> LAMBO Double Cabin</li>
+                    <li><strong>Year</strong> 2025 (Brand New)</li>
+                    <li><strong>Engine</strong> 2.8L Turbo Diesel</li>
+                    <li><strong>Mileage</strong> 0 km</li>
+                    <li><strong>Transmission</strong> Automatic</li>
+                    <li><strong>Color</strong> Pearl White</li>
+                    <li><strong>Location</strong> Kigali, Rwanda</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section video-section">
+            <h2><i class="fab fa-youtube" style="color: #FF0000;"></i> Watch the Full Vehicle Review</h2>
+        
+            
+            <p style="margin-top: 20px; font-style: italic; color: var(--text-color); font-size: 0.95em;">This video streams directly from our official YouTube Channel, providing a detailed look.</p>
+        </div>
+        
+        <div class="section description-section">
+            <h2><i class="fas fa-clipboard-list" style="color: var(--accent-color);"></i> Detailed Description</h2>
+            <p>This 2023 LAMBOGINI combines rugged capability with modern comfort. Built to handle tough terrains while providing a smooth city drive, this vehicle is brand new, spotless, and comes with a full manufacturer's warranty.</p>
+            <p><strong>Key Features:</strong> Touchscreen Multimedia Display, Rear-View Camera, Premium Fabric Seats, and the renowned 4x4 capability. Contact us immediately to arrange a test drive.</p>
+        </div>
+        
+    </div>
+    
+    <div class="sticky-cta">
+        <div class="sticky-price">
+            <i class="fas fa-tag"></i> $45,000 USD
+        </div>
+        <a href="tel:+25" class="call-to-action-sticky">
+            <i class="fas fa-phone-alt"></i> Call Now to Purchase
+        </a>
+       <a href="clock.html"> <button class="call-to-action-sticky" >TRACK YOUR CAR</button></a>
+    </div>
+
+</body>
+</html>
